@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>X O Game - Modern Tic Tac Toe</title>
+	</head>
+	<body>
+		<!-- User Profile Modal -->
+		<div id="user-modal" class="modal-overlay">
+			<div class="modal-container">
+				<div class="modal-header">
+					<h2 class="modal-title">🎮 Welcome to XO Game</h2>
+					<p class="modal-subtitle">Choose your game mode and create profile</p>
+				</div>
+				
+				<div class="modal-body">
+					<!-- Game Mode Selection -->
+					<div class="game-mode-section">
+						<h3>Choose Game Mode</h3>
+						<div class="game-mode-buttons">
+							<button class="mode-btn active" id="multiplayer-btn" data-mode="multiplayer">
+								<div class="mode-icon">👥</div>
+								<div class="mode-text">
+									<span class="mode-title">Multiplayer</span>
+									<span class="mode-desc">Play with a friend</span>
+								</div>
+							</button>
+							<button class="mode-btn" id="computer-btn" data-mode="computer">
+								<div class="mode-icon">🤖</div>
+								<div class="mode-text">
+									<span class="mode-title">vs Computer</span>
+									<span class="mode-desc">Play against AI</span>
+								</div>
+							</button>
+						</div>
+					</div>
+					<div class="avatar-section">
+						<h3>Choose Your Avatar</h3>
+						
+						<!-- Custom Avatar Upload -->
+						<div class="custom-avatar-section">
+							<div class="avatar-preview" id="avatar-preview">
+								<img id="preview-image" src="" alt="Avatar Preview" style="display: none;">
+								<span id="preview-emoji">🎮</span>
+							</div>
+							<div class="upload-controls">
+								<input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+								<button class="upload-btn" id="upload-trigger">
+									📁 Upload Photo
+								</button>
+								<button class="remove-btn" id="remove-avatar" style="display: none;">
+									🗑️ Remove
+								</button>
+							</div>
+						</div>
+						
+						<!-- Default Emoji Avatars -->
+						<div class="emoji-avatars">
+							<p class="section-label">Or choose from defaults:</p>
+							<div class="avatar-grid">
+								<div class="avatar-option active" data-avatar="🎮">🎮</div>
+								<div class="avatar-option" data-avatar="🔥">🔥</div>
+								<div class="avatar-option" data-avatar="⚡">⚡</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="username-section">
+						<h3>Enter Your Username</h3>
+						<input type="text" id="username-input" class="username-input" placeholder="Enter your username..." maxlength="15">
+						<div class="input-error" id="username-error"></div>
+					</div>
+				</div>
+				
+				<div class="modal-footer">
+					<button id="start-game-btn" class="start-game-btn" disabled>
+						🎮 Start Playing
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="app">
+			<div class="game-container">
+				<div class="player-info">
+					<div class="current-player">
+						<div class="player-avatar-container">
+							<img id="player-avatar-img" src="" alt="Avatar" style="display: none;">
+							<span id="player-avatar">🎮</span>
+						</div>
+						<span id="player-name">Player</span>
+					</div>
+				</div>
+				
+				<h1 class="game-title">X O Game</h1>
+				
+				<select class="symbol-selector">
+					<option value="-" disabled selected>Choose Your Symbol</option>
+					<option value="x">❌ Player X</option>
+					<option value="o">⭕ Player O</option>
+				</select>
+				
+				<div id="game-matrix">
+					<button disabled></button>
+					<button disabled></button>
+					<button disabled></button>
+					<button disabled></button>
+					<button disabled></button>
+					<button disabled></button>
+					<button disabled></button>
+					<button disabled></button>
+					<button disabled></button>
+				</div>
+				
+				<button class="reset-button">🔄 New Game</button>
+				<div id="game-status"></div>
+			</div>
+		</div>
+		<script type="module" src="/src/main.js"></script>
+	</body>
+</html>

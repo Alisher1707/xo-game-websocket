@@ -1,0 +1,20 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"predev": "npx kill-port 3001 || echo Port 3001 cleared",
+		"dev": "node --watch index.js",
+		"start": "npm run predev && npm run dev",
+		"server": "node --watch index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.13.1",
+	"dependencies": {
+		"socket.io": "^4.8.1"
+	}
+}
